@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    --btn-bg-color: #EEF0F5;
+    --btn-bg-hover-color: #B2B9C2;
+    --btn-hover-text-color: #5F6164;
+    --twitter-color: #55ACEE;
+    --linkedin-color: #007BB5;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    background-image: url("/images/repeating-chevrons.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   
+}
+
+.container-center, h1, p {
+    max-width: 500px;
+    padding: 0rem 1rem;
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    padding: 1rem;
+}
+
+p{
+    padding: 0.5rem;
+    font-size: medium;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    margin: auto;
+    text-align: left;
+}
+
+input {
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    display: block;
+    margin: auto;
+}
+
+/* hide arrows from input number field */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0rem;
+}
+
+#output {
+    text-align: center;
+    margin: 0rem 0rem 4rem 0rem;
+    font-size: large;
+}
+
+#btn-bill, #btn-calculate {
+    background-color: var(--btn-bg-color);
+    color: black;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#btn-bill:hover, #btn-calculate:hover {
+    background-color: var(--btn-bg-hover-color);
+    color: var(--btn-hover-text-color);
+}
+
+.link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.list-non-bullet {
+    list-style: none;
+}
+
+.list-item-inline {
+    display: inline;
+    padding: 0rem 0.5rem;
+}
+
+.footer {
+    padding: 2rem 1rem;
+    border-top-right-radius: 1rem;
+    text-align: center;
+    color: black;
+}
+
+.footer .footer-header {
+    font-weight: bold;
+    font-size: large;
+}
+
+/* .footer .link {
+    color: black;
+} */
+
+.footer ul {
+    padding-inline-start: 0px;
+}
+
+.fa {
+    padding: 0.5rem;
+    font-size: x-large;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.6;
+}
+
+.fa-twitter {
+    color: var(--twitter-color);
+}
+
+.fa-linkedin {
+
+    color: var(--linkedin-color);
+}
+
+.fa-github {
+    color: black;
+}

@@ -16,36 +16,45 @@ function clickEventHandler() {
         document.getElementById('hide').style.display = "block"
         output.innerText = "";
     } else {
+        output.style.color = "red";
         output.innerText = "Please enter valid amount..";
     }
 }
 
 function calculateEventHandler() {
     cashGiven = Number(inputCash.value);
-    var cashToBeGiven = cashGiven - billAmount;
+    billAmount = Number(inputBillAmount.value);
     var i = 0;
+    var cashToBeGiven = cashGiven - billAmount;
+    
+    if (billAmount != 0) {
+        if (billAmount < cashGiven) {
+            for (i = 0; i < totalNotes.length; i++) {
+                var numOfNotes = Math.floor(cashToBeGiven / totalNotes[i]);
+                cashToBeGiven %= totalNotes[i];
+                notesOutput[i].innerText = numOfNotes;
+            }
+            output.innerText = "";
 
-    if (billAmount < cashGiven) {
-        for ( i = 0; i < totalNotes.length; i++) {
-            var numOfNotes = Math.floor(cashToBeGiven / totalNotes[i]);
-            cashToBeGiven %= totalNotes[i];
-            notesOutput[i].innerText = numOfNotes;
+        } else if (billAmount == cashGiven) {
+            output.style.color = "green";
+            output.innerText = "That's perfect cash paid...😎";
+
+            for (i in totalNotes) {
+                notesOutput[i].innerText = 0;
+            }
+
+        } else {
+            output.style.color = "green";
+            output.innerText = "Cash given must be same or greater than the bill amount..";
+
+            for (i in totalNotes) {
+                notesOutput[i].innerText = 0;
+            }
         }
-        output.innerText = "";
-
-    } else if (billAmount == cashGiven) {
-        output.innerText = "That's perfect cash paid...😎";
-
-        for ( i in totalNotes) {
-            notesOutput[i].innerText = 0;
-        }
-
     } else {
-        output.innerText = "Cash given must be same or greater than the bill amount..";
-
-        for ( i in totalNotes) {
-            notesOutput[i].innerText = 0;
-        }
+        output.style.color = "red";
+        output.innerText = "Please enter the bill amount..";
     }
 
 }
